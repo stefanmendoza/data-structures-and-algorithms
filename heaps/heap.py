@@ -11,9 +11,9 @@ class Heap:
 
     # O(n)
     def heapify(self):
-        starting_index = ((len(self.tree) - 1) // 2) - 1
+        last_parent_index = (len(self.tree) - 2) // 2
         
-        for i in range(starting_index, -1, -1):
+        for i in range(last_parent_index, -1, -1):
             self.shift_down(i)
 
     # O(log(n))
