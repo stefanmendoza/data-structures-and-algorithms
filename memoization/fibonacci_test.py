@@ -1,8 +1,6 @@
 from memoization import fibonacci as f
 import pytest
 
-# Constants
-
 FIB_5 = 5
 
 FIB_100 = 354224848179261915075
@@ -16,18 +14,18 @@ FIB_1000 = '''
 704476137795166849228875
 '''
 
-# Helper Methods
 
 def large_num_to_s(s):
     return int(''.join([part.strip() for part in s.split('\n')]))
 
-# Tests
 
 def test_compute_5():
     assert f.compute(5) == FIB_5
 
+
 def test_compute_100():
     assert f.compute(100) == FIB_100
+
 
 def test_compute_1000():
     assert f.compute(1000) == int(large_num_to_s(FIB_1000))

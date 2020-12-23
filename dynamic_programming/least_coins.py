@@ -4,21 +4,21 @@
 # T(n) = O(N) * O(L) = O(N)
 def compute(target_sum, available_coins):
     results = [None] * (target_sum + 1)
-    
+
     if target_sum in available_coins:
         return [target_sum]
-    
+
     for value in range(1, target_sum + 1):
         # The minimum coins to get to the value is 1 (itself)
         if value in available_coins:
             results[value] = [value]
             continue
-        
+
         # The value is smaller than the smallest coin we have
         # so it's impossible to get to this value
         if value < min(available_coins):
             continue
-        
+
         smallest_list = []
         smallest_list_length = target_sum + 1
         for coin in available_coins:
@@ -28,7 +28,7 @@ def compute(target_sum, available_coins):
                 # not result in the optimal length list or even a list that sums up to the
                 # target value
                 current_list = results[value - coin] + [coin]
-                
+
                 if sum(current_list) <= value and len(current_list) < smallest_list_length:
                     smallest_list = current_list
                     smallest_list_length = len(current_list)

@@ -2,12 +2,12 @@
 def compute(n):
     if n == 1 or n == 2:
         return 1
-    
+
     states = [None] * (n + 1)
     states[1] = 1
     states[2] = 2
-    
-    for value in range(1,n):
+
+    for value in range(1, n):
         if value == 1 or value == 2:
             states[value] = 1
         else:

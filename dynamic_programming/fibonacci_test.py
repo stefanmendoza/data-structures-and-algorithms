@@ -1,8 +1,6 @@
 from dynamic_programming import fibonacci as f
 import pytest
 
-# Constants
-
 FIB_5 = 5
 
 FIB_100 = 354224848179261915075
@@ -72,24 +70,26 @@ FIB_10000 = '''
 9947366875
 '''
 
-# Helper Methods
 
 def large_num_to_s(s):
     return int(''.join([part.strip() for part in s.split('\n')]))
 
-# Tests
 
 def test_compute_5():
     assert f.compute(5) == FIB_5
 
+
 def test_compute_100():
     assert f.compute(100) == FIB_100
+
 
 def test_compute_1000():
     assert f.compute(1000) == int(large_num_to_s(FIB_1000))
 
-def test_compute_10000():    
+
+def test_compute_10000():
     assert f.compute(10000) == int(large_num_to_s(FIB_10000))
+
 
 def large_num_to_s(s):
     return int(''.join([part.strip() for part in s.split('\n')]))

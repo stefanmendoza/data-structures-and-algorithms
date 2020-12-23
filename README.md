@@ -10,19 +10,26 @@ installed dependencies. To setup the repo:
 ```sh
 $ python3 -m venv env
 $ source venv/bin/activate
-(venv) $ pip install -r requirements
+(venv) $ pip install -U pip setuptools wheel
+(venv) $ pip install -r requirements.txt
 ```
 
 ## Tests
 
+To run the linter(PEP8) with automatic corrections:
+
+```sh
+(venv) $ make lint
+```
+
 To run all tests:
 
 ```sh
-(venv) $ pytest -rA
+(venv) $ make tests
 ```
 
 To run tests in a specific directory:
 
 ```sh
-(venv) $ pytest -rA <directory>
+(venv) $ pytest -rf -v <directory>
 ```

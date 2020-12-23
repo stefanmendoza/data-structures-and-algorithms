@@ -1,5 +1,7 @@
 # T(n) = O(2n + 1) = O(n)
 states = {}
+
+
 def compute(n):
     if n in states:
         return states[n]
